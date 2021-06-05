@@ -1,0 +1,54 @@
+ enum Difficulty
+        {
+            Easy,Normal,Hard
+        }
+        struct Problem
+        {
+            public string Messege;
+            public int Answer;
+            public Problem(string message , int answer)
+            {
+                Messege = message;
+                Answer = answer;
+            }
+        }
+        static void Main()
+        {
+            int Score;
+            Score = int.Parse(Console.ReadLine());
+            if (Score == 0)
+            {
+                Console.WriteLine("Menu");
+            }
+            else if (Score == 1)
+            {
+                Console.WriteLine("Setting");
+            }
+            else if (Score == 2)
+            {
+                Console.WriteLine("Exit");
+            }
+            else
+            {
+                Console.WriteLine("Plese input 0-2");
+            }
+
+        }
+        static Problem[]GenerateRandomProblems(int numProblem)
+        {
+            Problem[] randomProblem = new Problem[numProblem];
+            Random rnd = new Random();
+            int x, y;
+            for (int i = 0; i < numProblem; i++)
+            {
+                x = rnd.Next(50);
+                y = rnd.Next(50);
+                if (rnd.NextDouble() >= 0.5)
+                randomProblem[i] =
+                new Problem(string.Format("{0} + {1} = ?", x, y), x + y);
+                else
+                randomProblem[i] =
+                new Problem(string.Format("{0} - {1} = ?", x, y), x - y);   
+            }
+            return randomProblem;
+            
