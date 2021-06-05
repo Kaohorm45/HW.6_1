@@ -1,0 +1,22 @@
+{ struct StudentData
+        {
+            public string name;
+            public int studentId;
+            public int Eng_score;
+            public int Math_score;
+            public int Science_score;
+        }
+        static void Main(string[] args)
+        {
+            StudentData student1;
+            student1.name = Console.ReadLine();
+            student1.studentId = int.Parse(Console.ReadLine());
+            student1.Eng_score = int.Parse(Console.ReadLine());
+            student1.Math_score = int.Parse(Console.ReadLine());
+            student1.Science_score = int.Parse(Console.ReadLine());
+            Console.WriteLine("student name " + student1.name);
+            Console.WriteLine("studentId " + student1.studentId);
+            Console.WriteLine("Eng score " + student1.Eng_score);
+            Console.WriteLine("Math score " + student1.Math_score);
+            Console.WriteLine("Science score " + student1.Science_score);
+            }
